@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecting Elements #02</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="content exercise">
+    <div id="first">#first</div>
+    <div>Second</div>
+    <div class="third last"><span wb-attrib>.third .last</span></div>
+    <script>              
+     /*this scenario, you want select the element by its id*/
+        document.querySelector("#first").classList.add('highlights');
+
+        /*querySelectorAll = returns nodelist*/
+        /*sometimes it is necessary to convert it to Array*/
+        const select = seletor =>
+        document.querySelectorAll(seletor).forEach(e => e.classList.add('highlights'));
+
+        const unselect = seletor =>
+        document.querySelectorAll(seletor).forEach(e => e.classList.remove('highlights'));
+
+        select('div');
+
+        unselect('.third');
+
+        /* * = all */
+        unselect('*');
+        
+        select(':not(#first)');
+        
+        unselect('*');
+
+        /*first child of each element*/
+        select(':nth-child(1)')
+        
+        unselect('*');
+
+        /*first element of the type div*/
+        select('div:nth-of-type(1)')
+
+        unselect('*');
+        
+        /*selected by an attribute*/
+        select('[wb-attrib]')
+    </script>
+</body>
+</html>

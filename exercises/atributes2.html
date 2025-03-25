@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Atributes #02</title>
+    <link rel='stylesheet' href='css/style.css'>
+</head>
+
+<body class='content exercise'>
+    <div>
+        <label for="shopping">Shopping</label>
+        <ul id="shopping" destino='office' data-urgencia="5">
+            <li>Tea</li>
+            <li>Water</li>
+            <li>Glass</li>
+        </ul>
+    </div>
+    <script>
+        const  list = document.querySelector('div ul[destino="office"]'); /*or #shopping*/
+
+        console.log('.....Element "ul".....');
+        console.log('childNodes', list.childNodes);
+        console.log('destino', list.destino); /*not working, because destino is made by me*/
+        console.log('getAttribute', list.getAttribute('destino'));
+        console.log('hasAttribute', list.hasAttribute('destino'));
+        list.setAttribute('destino', 'company'); /*new atribute, it was office, now company*/
+        list.setAttribute('status', 'open');
+        list.removeAttribute('destino');
+
+    </script>
+</body>
+
+</html>

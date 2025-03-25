@@ -10,7 +10,7 @@
 <body class='content exercise'>
     <div>
         <label for="shopping">Shopping</label>
-        <ul id="shopping" destino='office' data-urgencia="5">
+        <ul id="shopping" destino='office' data-urgencia="5" data-other="other-attribute">
             <li>Tea</li>
             <li>Water</li>
             <li>Glass</li>
@@ -22,11 +22,25 @@
         console.log('.....Element "ul".....');
         console.log('childNodes', list.childNodes);
         console.log('destino', list.destino); /*not working, because destino is made by me*/
+
         console.log('getAttribute', list.getAttribute('destino'));
         console.log('hasAttribute', list.hasAttribute('destino'));
+        
         list.setAttribute('destino', 'company'); /*new atribute, it was office, now company*/
         list.setAttribute('status', 'open');
         list.removeAttribute('destino');
+
+        console.log(list.dataset);
+        console.log(list.dataset.urgencia);
+
+        list.dataset.urgencia = 4;
+        console.log(list.getAttribute('data-urgencia'));
+
+        //WARNING   
+        const label = document.querySelector('label');
+        console.log(label.for);
+        console.log(label.htmlFor);
+        console.log(label.getAttribute('for'));
 
     </script>
 </body>

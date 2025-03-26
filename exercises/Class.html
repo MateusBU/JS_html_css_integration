@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Classes</title>
+    <link rel='stylesheet' href='css/style.css'>
+</head>
+
+<body class='content exercise'>
+    <div>
+        Classes
+    </div>
+    <script>
+        const div = document.querySelector('div');
+        const classes = div.classList;
+        classes.add('highlights');
+        classes.remove('highlights');
+    
+        /*if the element has highlight removes, otherwise adds*/
+        classes.toggle('highlights');
+
+        console.log(classes.contains('highlights'));
+        console.log(classes.length);
+
+        classes.toggle('highlights');
+        classes.toggle('highlights');
+
+        classes.toggle('highlights1');
+        classes.toggle('highlights2');
+
+        for(let c of classes){
+            console.log(c);
+        }
+
+        classes.forEach(c => console.log(c));
+    
+        const arrayClasses = Array.from(classes);
+        console.log(arrayClasses);
+    </script>
+</body>
+
+</html>

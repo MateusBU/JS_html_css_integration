@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Changing HTML #01</title>
+    <link rel='stylesheet' href='css/style.css'>
+</head>
+
+<body class='content exercise'>
+    <script>
+        const body = document.querySelector('body');
+
+        /*create a div element*/
+        const div1 = document.createElement('div');
+        
+        /*create a class named highlights*/
+        div1.classList.add('highlights');
+    
+        /*Inserted a text*/
+        div1.innerHTML = 'First';
+
+        const div2 = document.createElement('div');
+        div2.setAttribute('wm-attribute', 'value');
+        div2.innerHTML = 'Second';
+
+        const p = document.createElement('p');
+        p.innerHTML = 'Third';
+        const div3 = document.createElement('div');
+        /*'p' is added as the last child of the element 'div*/
+        div3.appendChild(p);
+
+        body.appendChild(div1);
+        body.appendChild(div2);
+        body.appendChild(div3);
+
+        const text = document.createTextNode('Before...');
+
+        /*other way to add an element*/
+        /*first insert the element, then which position (before the first child of div3)*/
+        div3.insertBefore(text, div3.childNodes[0])
+
+        const div4 = div3.cloneNode(true); /*clone everything (children) = true, only the element = false*/
+        body.appendChild(div4);
+        body.removeChild(div2);
+
+        
+    </script>
+</body>
+
+</html>

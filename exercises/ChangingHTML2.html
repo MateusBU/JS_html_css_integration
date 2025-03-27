@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Changing HTML #02</title>
+    <link rel='stylesheet' href='css/style.css'>
+</head>
+
+<body class='contains exercise'>
+    <div>
+        <p>Initial Text</p>
+    </div>
+    <script>
+        const div = document.querySelector('div');
+        /*remove everything of the element and change it*/
+        div.innerHTML = 'Changed Text';
+        // div.outerHTML = 'Changed Text';
+        div.insertAdjacentHTML('beforebegin','<p> Before Begin</p>');
+        div.insertAdjacentHTML('afterbegin','<p> After Begin</p>');
+        div.insertAdjacentHTML('beforeend','<p> Before End</p>');
+        div.insertAdjacentHTML('afterend','<p> After End</p>');
+
+        console.log(div.innerHTML);
+        console.log(div.innerText);
+    </script>
+</body>
+
+</html>

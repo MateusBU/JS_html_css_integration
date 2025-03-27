@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Working with Events #01</title>
+    <link rel='stylesheet' href='css/style.css'>
+</head>
+
+<body class="content exercise">
+    <div>
+        <!-- <a href="https://google.com.br" 
+        onclick="searching5s(event)">Google</a> -->
+        <a wait-a-little href="https://google.com.br">Google</a>
+
+
+    </div>
+    <script>
+        function searching5s(eventClick){
+            eventClick.preventDefault(); /*prevent the standard event occurs*/
+            console.log('5 seconds...');
+
+            setTimeout(()=>{
+                const link = eventClick.target;
+                window.location.href = link.href;
+            }, 5000);
+        }
+
+        // const a = document.querySelector('a');
+        // a.onclick = searching5s;
+        
+        const a = document.querySelector('[wait-a-little]');
+        a.onclick = searching5s;
+
+    </script>
+</body>

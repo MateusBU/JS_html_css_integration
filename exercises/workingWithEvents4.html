@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Working with Events #04</title>
+    <link rel='stylesheet' href='css/style.css'>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class="content exercise">
+    <h1>Form</h1>
+    <form name="research" action="http://www.google.com.br/search">
+        <input type="text" name="q" placeholder="Type...">
+        <select name="hl">
+                <option value="pt-br">Portuguese (Brazil)</option>
+                <option value="en-us">English (USA)</option>
+            </select>
+        <button wm-submit>Research</button>
+    </form>
+    <script>
+        // const submit = document.querySelector('[wm-submit]');
+
+        // submit.onclick = function(e) {
+        //     e.preventDefault();
+
+        //     const form = e.target.parentNode;
+        //     const formData = new FormData(form);
+        //     formData.append('ajax', true);
+        //     console.log(formData.get('q'));
+        //     console.log(formData.has('hl'));
+
+        //     for(let data of formData){
+        //         console.log(data);
+        //     }
+        // }
+
+
+        const form = document.forms[0];
+
+        form.onsubmit = function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const formData = new FormData(form);
+            formData.append('ajax', true);
+            console.log(formData.get('q'));
+            console.log(formData.has('hl'));
+
+            for(let data of formData){
+                console.log(data);
+            }
+        }
+    </script>
+</body>
